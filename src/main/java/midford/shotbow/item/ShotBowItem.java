@@ -17,11 +17,11 @@ public class ShotBowItem extends Item {
 	}
 
 	public ItemStack onUseItem(ItemStack itemstack, World world, EntityPlayer entityplayer) {
-		if (entityplayer.inventory.consumeInventoryItem(Item.ammoArrow.id)) {
+		if (entityplayer.inventory.consumeInventoryItem(ModItems.SteelArrow.id)) {
 			itemstack.damageItem(1, entityplayer);
 			world.playSoundAtEntity(entityplayer, entityplayer, "random.bow", 0.3F, 1.0F / (itemRand.nextFloat() * 0.4F + 0.8F));
 			if (!world.isClientSide) {
-				final float spread = 6f;
+				final float spread = 16f;
 				final int shotsToFire = 5;
 				for (int i = 0; i < shotsToFire; i++) {
 					EntityArrow arrow = new SteelArrowEntity(world, entityplayer, true, 0);

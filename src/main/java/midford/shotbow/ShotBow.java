@@ -2,9 +2,13 @@ package midford.shotbow;
 
 import midford.shotbow.entity.ModEntities;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.core.block.Block;
+import net.minecraft.core.item.Item;
+import net.minecraft.core.item.ItemStack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import midford.shotbow.item.ModItems;
+import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.GameStartEntrypoint;
 import turniplabs.halplibe.util.RecipeEntrypoint;
@@ -48,7 +52,20 @@ public class ShotBow implements ModInitializer, GameStartEntrypoint, RecipeEntry
 
 	@Override
 	public void onRecipesReady() {
+		RecipeBuilder.Shaped(MOD_ID, "SDS", "SBS", "NCN")
+			.addInput('S', Block.blockSteel)
+			.addInput('D', Item.diamond)
+			.addInput('B', Item.toolBow)
+			.addInput('C', Item.handcannonUnloaded)
+			.addInput('N', Item.nethercoal)
+			.create("shotbow", new ItemStack(ModItems.ShotBow, 1));
 
+		RecipeBuilder.Shaped(MOD_ID, "ASA", "AAA", "RXR")
+			.addInput('S', Item.ingotSteel)
+			.addInput('A', Item.ammoArrow)
+			.addInput('X', Item.ammoChargeExplosive)
+			.addInput('R', Item.dye, 1)
+			.create("steelarrow", new ItemStack(ModItems.SteelArrow, 1));
 	}
 
 	@Override

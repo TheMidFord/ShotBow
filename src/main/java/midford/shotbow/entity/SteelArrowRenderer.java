@@ -10,7 +10,7 @@ public class SteelArrowRenderer extends EntityRenderer<SteelArrowEntity> {
 
 	@Override
 	public void doRender(Tessellator tessellator, SteelArrowEntity entity, double x, double y, double z, float yaw, float partialTick) {
-		this.loadTexture("/assets/shotbow/textures/item/steelarrow.png");
+		this.loadTexture("/assets/shotbow/textures/entity/steelarrow.png");
 		GL11.glPushMatrix();
 		GL11.glTranslatef((float)x, (float)y, (float)z);
 		GL11.glRotatef(entity.yRotO + (entity.yRot - entity.yRotO) * partialTick - 90.0f, 0.0f, 1.0f, 0.0f);

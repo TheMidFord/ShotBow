@@ -1,9 +1,10 @@
 package midford.shotbow.entity;
 
-import midford.shotbow.item.ModItems;
+import net.minecraft.core.HitResult;
 import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.entity.projectile.EntityArrow;
 import net.minecraft.core.item.Item;
+import net.minecraft.core.world.Explosion;
 import net.minecraft.core.world.World;
 
 public class SteelArrowEntity extends EntityArrow {
@@ -22,7 +23,7 @@ public class SteelArrowEntity extends EntityArrow {
 	public SteelArrowEntity(World world, EntityLiving entityliving, boolean doesArrowBelongToPlayer, int arrowType) {
 		super(world, entityliving, doesArrowBelongToPlayer, arrowType);
 	}
-	@Override
+
 	protected void inGroundAction()
 	{
 		if(world.isClientSide) {
@@ -33,8 +34,15 @@ public class SteelArrowEntity extends EntityArrow {
 		world.playSoundAtEntity(null, this, "random.drr", 1.0F, 1.2F / (random.nextFloat() * 0.2F + 0.9F));
 		for(int j = 0; j < 4; j++)
 		{
-			world.spawnParticle("item", x, y, z, 0.0, 0.0D, 0.0D, ModItems.ShotBow.id);
+			world.spawnParticle("explode", x, y, z, 0.0, 0.0D, 0.0D, 0);
 		}
 		remove();
 	}
+	@Override
+	public void onHit(HitResult hitResult){
+		if (hitResult.entity instanceof EntityLiving) {
+			((EntityLiving)hitResult.entity).heartsFlashTime = 0;
+		}
+		super.onHit(hitResult);
+		}
 }
