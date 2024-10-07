@@ -15,7 +15,6 @@ public class ModItems {
 		ShotBow = new ItemBuilder(midford.shotbow.ShotBow.MOD_ID)
 			.setStackSize(1)
 			.setIcon("shotbow:item/shotbow")
-			.setMaxDamage(4608)
 			.build(new ShotBowItem("shotbow",itemId++));
 
 		SteelArrow = new ItemBuilder(midford.shotbow.ShotBow.MOD_ID)
