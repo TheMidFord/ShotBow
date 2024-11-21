@@ -1,5 +1,6 @@
 package midford.shotbow.item;
 
+import net.minecraft.client.render.item.model.ItemModelStandard;
 import net.minecraft.core.item.Item;
 import turniplabs.halplibe.helper.ItemBuilder;
 
@@ -15,6 +16,7 @@ public class ModItems {
 		ShotBow = new ItemBuilder(midford.shotbow.ShotBow.MOD_ID)
 			.setStackSize(1)
 			.setIcon("shotbow:item/shotbow")
+			.setItemModel(item -> new ItemModelStandard(item, null).setFull3D())
 			.setMaxDamage(4608)
 			.build(new ShotBowItem("shotbow",itemId++));
 

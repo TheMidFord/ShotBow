@@ -70,6 +70,6 @@ public class ShotBow implements ModInitializer, GameStartEntrypoint, RecipeEntry
 
 	@Override
 	public void initNamespaces() {
-
+		RecipeBuilder.initNameSpace("shotbow");
 	}
 }
