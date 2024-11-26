@@ -14,7 +14,7 @@ public class ShotBowItem extends Item {
 	public ShotBowItem(String name, int id) {
 		super(name, id);
 		this.maxStackSize = 1;
-		this.setMaxDamage(384);
+		this.setMaxDamage(4608);
 	}
 
 	public ItemStack onUseItem(ItemStack itemstack, World world, EntityPlayer entityplayer) {
