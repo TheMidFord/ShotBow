@@ -23,7 +23,7 @@ public class ShotBowItem extends Item {
 			world.playSoundAtEntity(entityplayer, entityplayer, "random.bow", 0.3F, 1.0F / (itemRand.nextFloat() * 0.4F + 0.8F));
 			if (!world.isClientSide) {
 				final float spread = 16f;
-				final int shotsToFire = 5;
+				final int shotsToFire = 16;
 				for (int i = 0; i < shotsToFire; i++) {
 					EntityArrow arrow = new SteelArrowEntity(world, entityplayer, true, 0);
 					float hOff = (itemRand.nextFloat() - 0.5f) * 0.4f;
