@@ -72,6 +72,15 @@ repositories {
 		}
 		metadataSources { artifact() }
 	}
+	//MartinMaven
+	maven {
+		name = "SignalumMavenInfrastructure"
+		url = uri("https://maven.thesignalumproject.net/infrastructure")
+	}
+	maven {
+		name = "SignalumMavenReleases"
+		url = uri("https://maven.thesignalumproject.net/releases")
+	}
 }
 
 dependencies {
@@ -83,7 +92,7 @@ dependencies {
 
 	// Helper library
 	// If you do not need Halplibe you can comment this line out or delete this line
-	modImplementation "com.github.Turnip-Labs:bta-halplibe:${project.halplibe_version}"
+	modImplementation("turniplabs:halplibe:${project.halplibe_version}")
 
 	modImplementation "ModMenu:ModMenu:${project.mod_menu_version}"
 
