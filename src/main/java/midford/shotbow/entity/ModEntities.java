@@ -1,6 +1,6 @@
 package midford.shotbow.entity;
 import midford.shotbow.ShotBow;
-import net.minecraft.client.render.entity.ArrowRenderer;
+import net.minecraft.client.render.entity.EntityRendererArrow;
 import net.minecraft.core.entity.Entity;
 import turniplabs.halplibe.helper.EntityHelper;
 

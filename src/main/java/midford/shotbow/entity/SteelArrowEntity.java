@@ -1,13 +1,13 @@
 package midford.shotbow.entity;
 
-import net.minecraft.core.HitResult;
-import net.minecraft.core.entity.EntityLiving;
-import net.minecraft.core.entity.projectile.EntityArrow;
+import net.minecraft.core.entity.Mob;
+import net.minecraft.core.entity.projectile.ProjectileArrow;
 import net.minecraft.core.item.Item;
+import net.minecraft.core.util.phys.HitResult;
 import net.minecraft.core.world.Explosion;
 import net.minecraft.core.world.World;
 
-public class SteelArrowEntity extends EntityArrow {
+public class SteelArrowEntity extends ProjectileArrow {
 	public SteelArrowEntity(World world) {
 		super(world);
 	}
@@ -20,7 +20,7 @@ public class SteelArrowEntity extends EntityArrow {
 		super(world, d, d1, d2, arrowType);
 	}
 
-	public SteelArrowEntity(World world, EntityLiving entityliving, boolean doesArrowBelongToPlayer, int arrowType) {
+	public SteelArrowEntity(World world, Mob entityliving, boolean doesArrowBelongToPlayer, int arrowType) {
 		super(world, entityliving, doesArrowBelongToPlayer, arrowType);
 	}
 
@@ -40,8 +40,8 @@ public class SteelArrowEntity extends EntityArrow {
 	}
 	@Override
 	public void onHit(HitResult hitResult){
-		if (hitResult.entity instanceof EntityLiving) {
-			((EntityLiving)hitResult.entity).heartsFlashTime = 0;
+		if (hitResult.entity instanceof Mob) {
+			((Mob)hitResult.entity).heartsFlashTime = 0;
 		}
 		super.onHit(hitResult);
 		}
