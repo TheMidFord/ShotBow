@@ -8,7 +8,7 @@ import org.lwjgl.opengl.GL11;
 public class SteelArrowRenderer extends EntityRenderer<SteelArrowEntity> {
 
 	@Override
-	public void doRender(Tessellator tessellator, SteelArrowEntity entity, double x, double y, double z, float yaw, float partialTick) {
+	public void render(Tessellator tessellator, SteelArrowEntity entity, double x, double y, double z, float yaw, float partialTick) {
 		this.bindTexture("/assets/shotbow/textures/entity/steelarrow.png");
 		GL11.glPushMatrix();
 		GL11.glTranslatef((float)x, (float)y, (float)z);

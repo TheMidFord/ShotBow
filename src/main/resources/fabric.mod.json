@@ -24,6 +24,7 @@
     "main": [
 			"midford.shotbow.ShotBow"
     ],
+
 		"beforeGameStart": [
 			"midford.shotbow.ShotBow"
 		],
@@ -32,6 +33,9 @@
 		],
 		"recipesReady": [
 			"midford.shotbow.ShotBow"
+		],
+		"initModels": [
+			"midford.shotbow.item.ModItems"
 		]
 	},
   "mixins": [

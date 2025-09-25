@@ -9,8 +9,8 @@ import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.world.World;
 
 public class ShotBowItem extends Item {
-	public ShotBowItem(String name, int id) {
-		super(name, id);
+	public ShotBowItem(String translationkey, String namespaceId, int id) {
+		super(translationkey, namespaceId, id);
 		this.maxStackSize = 1;
 		this.setMaxDamage(4608);
 	}
@@ -49,7 +49,6 @@ public class ShotBowItem extends Item {
 		arrow.xd = newMotionX + (double)(hOff * cosYaw);
 		arrow.yd = newMotionY + vOff;
 		arrow.zd = newMotionZ + (double)(hOff * sinYaw);
-
 
 		float f3 = MathHelper.sqrt(newMotionX * newMotionX + newMotionZ * newMotionZ);
 		arrow.yRotO = arrow.yRot = (float)(Math.atan2(newMotionX, newMotionZ) * 180.0 / Math.PI);
