@@ -29,19 +29,19 @@ public class SteelArrowEntity extends ProjectileArrow {
 		if(world.isClientSide) {
 			setGrounded(true);
 			shake = 7;
-			return;
+		} else {
+			world.playSoundAtEntity(null, this, "random.drr", 1.0F, 1.2F / (random.nextFloat() * 0.2F + 0.9F));
+			remove();
 		}
-		world.playSoundAtEntity(null, this, "random.drr", 1.0F, 1.2F / (random.nextFloat() * 0.2F + 0.9F));
-		for(int j = 0; j < 4; j++)
-		{
+		for(int j = 0; j < 4; j++) {
 			world.spawnParticle("explode", x, y, z, 0.0, 0.0D, 0.0D, 0);
 		}
-		remove();
+
 	}
 	@Override
 	public void onHit(HitResult hitResult){
 		if (hitResult.entity instanceof Mob) {
-			((Mob)hitResult.entity).heartsFlashTime = 0;
+			hitResult.entity.heartsFlashTime = 0;
 		}
 		super.onHit(hitResult);
 		}
