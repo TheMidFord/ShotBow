@@ -34,14 +34,14 @@ public class SteelArrowEntity extends ProjectileArrow {
 			remove();
 		}
 		for(int j = 0; j < 4; j++) {
-			world.spawnParticle("explode", x, y, z, 0.0, 0.0D, 0.0D, 0);
+			world.spawnParticle("explode", x, y, z, 0.0, 0.0D, 0.0D, 0,false);
 		}
 
 	}
 	@Override
 	public void onHit(HitResult hitResult){
-		if (hitResult.entity instanceof Mob) {
-			hitResult.entity.heartsFlashTime = 0;
+		if (hitResult instanceof HitResult.Entity entityResult && entityResult.entity instanceof Mob mob) {
+			mob.heartsFlashTime = 0;
 		}
 		super.onHit(hitResult);
 		}

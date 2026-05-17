@@ -10,6 +10,7 @@ import net.minecraft.core.item.Items;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import midford.shotbow.item.ModItems;
+import turniplabs.halplibe.HalpLibe;
 import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.GameStartEntrypoint;
@@ -19,7 +20,7 @@ import java.util.Properties;
 
 
 public class ShotBow implements ModInitializer, GameStartEntrypoint, RecipeEntrypoint {
-    public static final String MOD_ID = "shotbow";
+    public static final String MOD_ID = HalpLibe.registerMod("shotbow",true);
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static int blockId;
 	public static int itemId;

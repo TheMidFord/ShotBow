@@ -15,7 +15,7 @@ public class ShotBowItem extends Item {
 		this.setMaxDamage(4608);
 	}
 
-	public ItemStack onUseItem(ItemStack itemstack, World world, Player entityplayer) {
+	public ItemStack onUse(ItemStack itemstack, World world, Player entityplayer) {
 		if (entityplayer.inventory.consumeInventoryItem(ModItems.SteelArrow.id)) {
 			itemstack.damageItem(1, entityplayer);
 			world.playSoundAtEntity(entityplayer, entityplayer, "random.bow", 0.3F, 1.0F / (itemRand.nextFloat() * 0.4F + 0.8F));

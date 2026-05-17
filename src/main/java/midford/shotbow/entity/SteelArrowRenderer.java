@@ -1,6 +1,7 @@
 package midford.shotbow.entity;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.tessellator.Tessellator;
+import net.minecraft.client.render.tessellator.TessellatorGeneral;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.util.helper.MathHelper;
 import org.lwjgl.opengl.GL11;
@@ -8,7 +9,7 @@ import org.lwjgl.opengl.GL11;
 public class SteelArrowRenderer extends EntityRenderer<SteelArrowEntity> {
 
 	@Override
-	public void render(Tessellator tessellator, SteelArrowEntity entity, double x, double y, double z, float yaw, float partialTick) {
+	public void render(TessellatorGeneral tessellator, SteelArrowEntity entity, double x, double y, double z, float yaw, float partialTick) {
 		this.bindTexture("/assets/shotbow/textures/entity/steelarrow.png");
 		GL11.glPushMatrix();
 		GL11.glTranslatef((float)x, (float)y, (float)z);

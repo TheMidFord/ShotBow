@@ -21,6 +21,11 @@ public class NetEntrySteelArrow implements IVehicleEntry<SteelArrowEntity>, ITra
 		return 64;
 	}
 
+	@Override
+	public int getMovementPacketDelay() {
+		return 0;
+	}
+
 	public int getPacketDelay() {
 		return 1;
 	}
