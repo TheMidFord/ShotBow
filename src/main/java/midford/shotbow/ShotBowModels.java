@@ -33,8 +33,8 @@ public class ShotBowModels implements ModelEntrypoint {
 
 	@Override
 	public void initItemModels(ItemModelDispatcher itemModelDispatcher) {
-		itemModelDispatcher.addDispatch(new ItemModelStandard(ModItems.ShotBow, null).setIcon("shotbow:item/shotbow").setDisplayPos("firstperson_righthand", HANDHELD_FIRST_PERSON_RIGHT_HAND).setDisplayPos("firstperson_lefthand", HANDHELD_FIRST_PERSON_LEFT_HAND).setDisplayPos("thirdperson_righthand", HANDHELD_THIRD_PERSON_RIGHT_HAND).setDisplayPos("thirdperson_lefthand", HANDHELD_THIRD_PERSON_LEFT_HAND));
-		itemModelDispatcher.addDispatch(new ItemModelStandard(ModItems.SteelArrow, null).setIcon("shotbow:item/steel_arrow"));
+		itemModelDispatcher.addDispatch(new ItemModelStandard(ModItems.ShotBow).setIcon("shotbow:item/shotbow").setDisplayPos("firstperson_righthand", HANDHELD_FIRST_PERSON_RIGHT_HAND).setDisplayPos("firstperson_lefthand", HANDHELD_FIRST_PERSON_LEFT_HAND).setDisplayPos("thirdperson_righthand", HANDHELD_THIRD_PERSON_RIGHT_HAND).setDisplayPos("thirdperson_lefthand", HANDHELD_THIRD_PERSON_LEFT_HAND));
+		itemModelDispatcher.addDispatch(new ItemModelStandard(ModItems.SteelArrow).setIcon("shotbow:item/steel_arrow"));
 	}
 
 	@Override
