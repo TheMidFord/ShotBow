@@ -14,11 +14,11 @@ import static midford.shotbow.ShotBow.itemId;
 
 		ShotBow = new ItemBuilder(midford.shotbow.ShotBow.MOD_ID)
 			.setStackSize(1)
-			.build(new ShotBowItem("shotbow", "shotbow:item/shotbow", itemId++));
+			.build(new ShotBowItem("shotbow.shotbow", "shotbow:item/shotbow", itemId++));
 
 		SteelArrow = new ItemBuilder(midford.shotbow.ShotBow.MOD_ID)
 			.setStackSize(64)
-			.build(new Item("steel_arrow", "shotbow:item/steel_arrow",itemId++));
+			.build(new Item("shotbow.steel_arrow", "shotbow:item/steel_arrow",itemId++));
 
 	}
 }
